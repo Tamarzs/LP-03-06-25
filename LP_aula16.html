@@ -1,0 +1,754 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>&lrm;</title>
+<meta name="generator" content="Org Mode" />
+<style>
+  #content { max-width: 60em; margin: auto; }
+  .title  { text-align: center;
+             margin-bottom: .2em; }
+  .subtitle { text-align: center;
+              font-size: medium;
+              font-weight: bold;
+              margin-top:0; }
+  .todo   { font-family: monospace; color: red; }
+  .done   { font-family: monospace; color: green; }
+  .priority { font-family: monospace; color: orange; }
+  .tag    { background-color: #eee; font-family: monospace;
+            padding: 2px; font-size: 80%; font-weight: normal; }
+  .timestamp { color: #bebebe; }
+  .timestamp-kwd { color: #5f9ea0; }
+  .org-right  { margin-left: auto; margin-right: 0px;  text-align: right; }
+  .org-left   { margin-left: 0px;  margin-right: auto; text-align: left; }
+  .org-center { margin-left: auto; margin-right: auto; text-align: center; }
+  .underline { text-decoration: underline; }
+  #postamble p, #preamble p { font-size: 90%; margin: .2em; }
+  p.verse { margin-left: 3%; }
+  pre {
+    border: 1px solid #e6e6e6;
+    border-radius: 3px;
+    background-color: #f2f2f2;
+    padding: 8pt;
+    font-family: monospace;
+    overflow: auto;
+    margin: 1.2em;
+  }
+  pre.src {
+    position: relative;
+    overflow: auto;
+  }
+  pre.src:before {
+    display: none;
+    position: absolute;
+    top: -8px;
+    right: 12px;
+    padding: 3px;
+    color: #555;
+    background-color: #f2f2f299;
+  }
+  pre.src:hover:before { display: inline; margin-top: 14px;}
+  /* Languages per Org manual */
+  pre.src-asymptote:before { content: 'Asymptote'; }
+  pre.src-awk:before { content: 'Awk'; }
+  pre.src-authinfo::before { content: 'Authinfo'; }
+  pre.src-C:before { content: 'C'; }
+  /* pre.src-C++ doesn't work in CSS */
+  pre.src-clojure:before { content: 'Clojure'; }
+  pre.src-css:before { content: 'CSS'; }
+  pre.src-D:before { content: 'D'; }
+  pre.src-ditaa:before { content: 'ditaa'; }
+  pre.src-dot:before { content: 'Graphviz'; }
+  pre.src-calc:before { content: 'Emacs Calc'; }
+  pre.src-emacs-lisp:before { content: 'Emacs Lisp'; }
+  pre.src-fortran:before { content: 'Fortran'; }
+  pre.src-gnuplot:before { content: 'gnuplot'; }
+  pre.src-haskell:before { content: 'Haskell'; }
+  pre.src-hledger:before { content: 'hledger'; }
+  pre.src-java:before { content: 'Java'; }
+  pre.src-js:before { content: 'Javascript'; }
+  pre.src-latex:before { content: 'LaTeX'; }
+  pre.src-ledger:before { content: 'Ledger'; }
+  pre.src-lisp:before { content: 'Lisp'; }
+  pre.src-lilypond:before { content: 'Lilypond'; }
+  pre.src-lua:before { content: 'Lua'; }
+  pre.src-matlab:before { content: 'MATLAB'; }
+  pre.src-mscgen:before { content: 'Mscgen'; }
+  pre.src-ocaml:before { content: 'Objective Caml'; }
+  pre.src-octave:before { content: 'Octave'; }
+  pre.src-org:before { content: 'Org mode'; }
+  pre.src-oz:before { content: 'OZ'; }
+  pre.src-plantuml:before { content: 'Plantuml'; }
+  pre.src-processing:before { content: 'Processing.js'; }
+  pre.src-python:before { content: 'Python'; }
+  pre.src-R:before { content: 'R'; }
+  pre.src-ruby:before { content: 'Ruby'; }
+  pre.src-sass:before { content: 'Sass'; }
+  pre.src-scheme:before { content: 'Scheme'; }
+  pre.src-screen:before { content: 'Gnu Screen'; }
+  pre.src-sed:before { content: 'Sed'; }
+  pre.src-sh:before { content: 'shell'; }
+  pre.src-sql:before { content: 'SQL'; }
+  pre.src-sqlite:before { content: 'SQLite'; }
+  /* additional languages in org.el's org-babel-load-languages alist */
+  pre.src-forth:before { content: 'Forth'; }
+  pre.src-io:before { content: 'IO'; }
+  pre.src-J:before { content: 'J'; }
+  pre.src-makefile:before { content: 'Makefile'; }
+  pre.src-maxima:before { content: 'Maxima'; }
+  pre.src-perl:before { content: 'Perl'; }
+  pre.src-picolisp:before { content: 'Pico Lisp'; }
+  pre.src-scala:before { content: 'Scala'; }
+  pre.src-shell:before { content: 'Shell Script'; }
+  pre.src-ebnf2ps:before { content: 'ebfn2ps'; }
+  /* additional language identifiers per "defun org-babel-execute"
+       in ob-*.el */
+  pre.src-cpp:before  { content: 'C++'; }
+  pre.src-abc:before  { content: 'ABC'; }
+  pre.src-coq:before  { content: 'Coq'; }
+  pre.src-groovy:before  { content: 'Groovy'; }
+  /* additional language identifiers from org-babel-shell-names in
+     ob-shell.el: ob-shell is the only babel language using a lambda to put
+     the execution function name together. */
+  pre.src-bash:before  { content: 'bash'; }
+  pre.src-csh:before  { content: 'csh'; }
+  pre.src-ash:before  { content: 'ash'; }
+  pre.src-dash:before  { content: 'dash'; }
+  pre.src-ksh:before  { content: 'ksh'; }
+  pre.src-mksh:before  { content: 'mksh'; }
+  pre.src-posh:before  { content: 'posh'; }
+  /* Additional Emacs modes also supported by the LaTeX listings package */
+  pre.src-ada:before { content: 'Ada'; }
+  pre.src-asm:before { content: 'Assembler'; }
+  pre.src-caml:before { content: 'Caml'; }
+  pre.src-delphi:before { content: 'Delphi'; }
+  pre.src-html:before { content: 'HTML'; }
+  pre.src-idl:before { content: 'IDL'; }
+  pre.src-mercury:before { content: 'Mercury'; }
+  pre.src-metapost:before { content: 'MetaPost'; }
+  pre.src-modula-2:before { content: 'Modula-2'; }
+  pre.src-pascal:before { content: 'Pascal'; }
+  pre.src-ps:before { content: 'PostScript'; }
+  pre.src-prolog:before { content: 'Prolog'; }
+  pre.src-simula:before { content: 'Simula'; }
+  pre.src-tcl:before { content: 'tcl'; }
+  pre.src-tex:before { content: 'TeX'; }
+  pre.src-plain-tex:before { content: 'Plain TeX'; }
+  pre.src-verilog:before { content: 'Verilog'; }
+  pre.src-vhdl:before { content: 'VHDL'; }
+  pre.src-xml:before { content: 'XML'; }
+  pre.src-nxml:before { content: 'XML'; }
+  /* add a generic configuration mode; LaTeX export needs an additional
+     (add-to-list 'org-latex-listings-langs '(conf " ")) in .emacs */
+  pre.src-conf:before { content: 'Configuration File'; }
+
+  table { border-collapse:collapse; }
+  caption.t-above { caption-side: top; }
+  caption.t-bottom { caption-side: bottom; }
+  td, th { vertical-align:top;  }
+  th.org-right  { text-align: center;  }
+  th.org-left   { text-align: center;   }
+  th.org-center { text-align: center; }
+  td.org-right  { text-align: right;  }
+  td.org-left   { text-align: left;   }
+  td.org-center { text-align: center; }
+  dt { font-weight: bold; }
+  .footpara { display: inline; }
+  .footdef  { margin-bottom: 1em; }
+  .figure { padding: 1em; }
+  .figure p { text-align: center; }
+  .equation-container {
+    display: table;
+    text-align: center;
+    width: 100%;
+  }
+  .equation {
+    vertical-align: middle;
+  }
+  .equation-label {
+    display: table-cell;
+    text-align: right;
+    vertical-align: middle;
+  }
+  .inlinetask {
+    padding: 10px;
+    border: 2px solid gray;
+    margin: 10px;
+    background: #ffffcc;
+  }
+  #org-div-home-and-up
+   { text-align: right; font-size: 70%; white-space: nowrap; }
+  textarea { overflow-x: auto; }
+  .linenr { font-size: smaller }
+  .code-highlighted { background-color: #ffff00; }
+  .org-info-js_info-navigation { border-style: none; }
+  #org-info-js_console-label
+    { font-size: 10px; font-weight: bold; white-space: nowrap; }
+  .org-info-js_search-highlight
+    { background-color: #ffff00; color: #000000; font-weight: bold; }
+  .org-svg { }
+body {
+         font-family: "Quicksand", serif;
+  font-optical-sizing: auto;
+  font-weight: <weight>;
+  font-style: normal;
+    }
+    code, pre, src, source {
+        font-family: "Source Code Pro", serif;
+  font-optical-sizing: auto;
+  font-weight: <weight>;
+  font-style: normal;
+    }
+</style>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&family=Source+Code+Pro:ital,wght@0,200..900;1,200..900&display=swap" rel="stylesheet">
+
+</head>
+<body>
+<div id="content" class="content">
+<div id="table-of-contents" role="doc-toc">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents" role="doc-toc">
+<ul>
+<li><a href="#org1f41d66">1. Lendo dados</a>
+<ul>
+<li><a href="#org9aa62cf">1.1. Abrir arquivo para leitura</a></li>
+<li><a href="#org3ef4370">1.2. Ler cada linha</a></li>
+<li><a href="#org5a039dd">1.3. Imprimir cada linha</a></li>
+<li><a href="#org0671d63">1.4. Fechar o arquivo</a></li>
+<li><a href="#org7f90a8b">1.5. Exemplo</a></li>
+<li><a href="#orga466121">1.6. Exercício</a></li>
+</ul>
+</li>
+<li><a href="#org486a6ef">2. Escrevendo dados</a>
+<ul>
+<li><a href="#orgd1bdc17">2.1. Recebendo o dado</a></li>
+<li><a href="#orgf0a5834">2.2. Abrir arquivo para escrita</a></li>
+<li><a href="#orgd67a920">2.3. Escrever dado</a></li>
+<li><a href="#org57fd877">2.4. Fechar o arquivo</a></li>
+<li><a href="#orge0a3c98">2.5. Exemplo</a></li>
+<li><a href="#org43b3971">2.6. Dados formatados</a></li>
+<li><a href="#org47eae09">2.7. Exercício</a></li>
+</ul>
+</li>
+<li><a href="#org83958a9">3. Struct</a>
+<ul>
+<li><a href="#org2e765e5">3.1. Usando structs</a></li>
+<li><a href="#org1bd9939">3.2. Lendo dados</a></li>
+<li><a href="#org260664d">3.3. Exercício</a></li>
+</ul>
+</li>
+<li><a href="#org46ff1e6">4. Envio</a></li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-org1f41d66" class="outline-2">
+<h2 id="org1f41d66"><span class="section-number-2">1.</span> Lendo dados</h2>
+<div class="outline-text-2" id="text-1">
+<p>
+Podemos ter um arquivo <code>nomes.txt</code>:
+</p>
+
+<pre class="example" id="orgb8d7d18">
+Fulano
+Beltrano
+Ciclano
+</pre>
+
+<p>
+E ler cada linha imprimindo:
+</p>
+
+<pre class="example" id="org42dfe67">
+Nome 1: Fulano
+Nome 2: Beltrano
+Nome 3: Ciclano
+</pre>
+
+<p>
+Para isso, precisamos:
+</p>
+
+<ol class="org-ol">
+<li>abrir o arquivo para leitura.</li>
+<li>ler cada linha.</li>
+<li>imprimir a linha lida.</li>
+<li>fechar o arquivo.</li>
+</ol>
+</div>
+
+<div id="outline-container-org9aa62cf" class="outline-3">
+<h3 id="org9aa62cf"><span class="section-number-3">1.1.</span> Abrir arquivo para leitura</h3>
+<div class="outline-text-3" id="text-1-1">
+<p>
+Usamos <code>fopen()</code> passando o nome do arquivo e o modo leitura:
+</p>
+
+<div class="org-src-container">
+<pre class="src src-c">fopen("nomes.txt", "r");
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org3ef4370" class="outline-3">
+<h3 id="org3ef4370"><span class="section-number-3">1.2.</span> Ler cada linha</h3>
+<div class="outline-text-3" id="text-1-2">
+<p>
+Usamos <code>fgets()</code> para ler um conjunto de caracteres até <code>'\n'</code>, passamos o destino onde será colocados os caracteres, a quantidade máxima de caracteres que poderão ser lidos e um ponteiro para o arquivo que será lido:
+</p>
+
+<div class="org-src-container">
+<pre class="src src-c">fgets(destino, maximo, parquivo);
+</pre>
+</div>
+
+<p>
+A função <code>fgets()</code> retorna um ponteiro para o buffer lido ou NULL se houver erro.
+</p>
+</div>
+</div>
+
+<div id="outline-container-org5a039dd" class="outline-3">
+<h3 id="org5a039dd"><span class="section-number-3">1.3.</span> Imprimir cada linha</h3>
+<div class="outline-text-3" id="text-1-3">
+<p>
+Como a função <code>fgets()</code> salva os caracteres em um vetor <code>destino</code> podemos imprimir o vetor usando:
+</p>
+
+<pre class="example">
+printf("%s", destino);
+</pre>
+</div>
+</div>
+
+<div id="outline-container-org0671d63" class="outline-3">
+<h3 id="org0671d63"><span class="section-number-3">1.4.</span> Fechar o arquivo</h3>
+<div class="outline-text-3" id="text-1-4">
+<p>
+Para fechar o arquivo após o uso, a função <code>fclose()</code> é empregada assim:
+</p>
+
+<div class="org-src-container">
+<pre class="src src-c">fclose(parquivo);
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org7f90a8b" class="outline-3">
+<h3 id="org7f90a8b"><span class="section-number-3">1.5.</span> Exemplo</h3>
+<div class="outline-text-3" id="text-1-5">
+<div class="org-src-container">
+<pre class="src src-c">#include &lt;stdio.h&gt;
+
+int main(void) {
+  FILE *pArquivo = NULL;
+  pArquivo = fopen("nomes.txt", "r");
+
+  char destino[80];
+  fgets(destino, 80, pArquivo);
+
+  printf("%s", destino);
+
+  fclose(pArquivo);
+  return 0;
+}
+</pre>
+</div>
+
+<iframe width="950" height="594" src="https://www.youtube.com/embed/j7p2dPNa9vI" title="LP Aula16 ex1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+</div>
+</div>
+
+<div id="outline-container-orga466121" class="outline-3">
+<h3 id="orga466121"><span class="section-number-3">1.6.</span> Exercício</h3>
+<div class="outline-text-3" id="text-1-6">
+<ol class="org-ol">
+<li>Ajuste o programa anterior para ler todas as linhas do arquivo abaixo:</li>
+</ol>
+
+<pre class="example" id="orgdd8dbb3">
+Capitu
+Bentinho
+Escobar
+Sancha
+Dona Gloria
+Jose Dias
+Ezequiel
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org486a6ef" class="outline-2">
+<h2 id="org486a6ef"><span class="section-number-2">2.</span> Escrevendo dados</h2>
+<div class="outline-text-2" id="text-2">
+<p>
+Para receber um dado e gravá-lo em um arquivo devemos:
+</p>
+
+<ol class="org-ol">
+<li>receber o dado.</li>
+<li>abrir o arquivo para escrita.</li>
+<li>escrever o dado no arquivo.</li>
+<li>fechar o arquivo.</li>
+</ol>
+</div>
+
+<div id="outline-container-orgd1bdc17" class="outline-3">
+<h3 id="orgd1bdc17"><span class="section-number-3">2.1.</span> Recebendo o dado</h3>
+<div class="outline-text-3" id="text-2-1">
+<p>
+Usamos <code>scanf()</code> para receber dados do usuário:
+</p>
+
+<div class="org-src-container">
+<pre class="src src-c">scanf("%s", nome);
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgf0a5834" class="outline-3">
+<h3 id="orgf0a5834"><span class="section-number-3">2.2.</span> Abrir arquivo para escrita</h3>
+<div class="outline-text-3" id="text-2-2">
+<p>
+Usamos a mesma <code>fopen()</code> com o modo de escrita:
+</p>
+
+<dl class="org-dl">
+<dt><code>"w"</code></dt><dd>escrever apagando o conteúdo anterior.</dd>
+<dt><code>"a"</code></dt><dd>escrever no fim do arquivo.</dd>
+</dl>
+
+<div class="org-src-container">
+<pre class="src src-c">fopen("nomes.txt", "a");
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgd67a920" class="outline-3">
+<h3 id="orgd67a920"><span class="section-number-3">2.3.</span> Escrever dado</h3>
+<div class="outline-text-3" id="text-2-3">
+<p>
+A função <code>fputs()</code> escreve uma string em um determinado arquivo:
+</p>
+
+<pre class="example">
+fputs( nome, parquivo);
+</pre>
+
+<p>
+Ela retorna um valor não negativo se for tudo bem na escrita ou <code>EOF</code> caso ocorra um erro de escrita.
+</p>
+</div>
+</div>
+
+<div id="outline-container-org57fd877" class="outline-3">
+<h3 id="org57fd877"><span class="section-number-3">2.4.</span> Fechar o arquivo</h3>
+<div class="outline-text-3" id="text-2-4">
+<p>
+Para fechar o arquivo após a escrita, a mesma função <code>fclose()</code> é usada:
+</p>
+
+<div class="org-src-container">
+<pre class="src src-c">fclose(parquivo);
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orge0a3c98" class="outline-3">
+<h3 id="orge0a3c98"><span class="section-number-3">2.5.</span> Exemplo</h3>
+<div class="outline-text-3" id="text-2-5">
+<div class="org-src-container">
+<pre class="src src-c">#include &lt;stdio.h&gt;
+
+int main(void) {
+    // Lendo dado
+    char nome[20];
+    printf("Nome: ");
+    scanf("%19s", nome);
+
+    // abrindo arquivo
+    FILE *pArquivo = NULL;
+    pArquivo = fopen("nomes.txt", "a");
+
+    // escrevendo no arquivo
+    fputs(nome, pArquivo);
+
+    // fechando o arquivo
+    fclose(pArquivo);
+
+    return 0;
+}  
+</pre>
+</div>
+
+<iframe width="950" height="534" src="https://www.youtube.com/embed/iy7l4-LXLe4" title="LP Aula16 ex2" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+</div>
+</div>
+
+<div id="outline-container-org43b3971" class="outline-3">
+<h3 id="org43b3971"><span class="section-number-3">2.6.</span> Dados formatados</h3>
+<div class="outline-text-3" id="text-2-6">
+<p>
+Para escrever formatando os dados use <code>fprintf()</code>:
+</p>
+
+<div class="org-src-container">
+<pre class="src src-c">fprintf(parquivo, "%s\n", nome);
+</pre>
+</div>
+
+<iframe width="950" height="594" src="https://www.youtube.com/embed/N7jH0artD7I" title="LP Aula16 ex3" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+</div>
+</div>
+
+<div id="outline-container-org47eae09" class="outline-3">
+<h3 id="org47eae09"><span class="section-number-3">2.7.</span> Exercício</h3>
+<div class="outline-text-3" id="text-2-7">
+<ol class="org-ol">
+<li value="2">Crie um programa em C que recebe o titulo do livro e os nomes de personagens do livro salvando os dados no arquivo: titulo_do_livro.txt onde <code>titulo_do_livro</code> foi digitado pelo usuário.</li>
+
+<li value="3">Crie um programa em C que recebe o titulo do livro, lê e imprime um nome de personagem por vez se o usuário apertar P se apertar F ou chegar ao fim do arquivo, encerre o programa.</li>
+
+<li value="4">Crie um programa que recebe uma data e hora digitadas pelo usuário assim:</li>
+</ol>
+
+<p>
+Data: 03/06/2025
+</p>
+
+<p>
+Hora: 14:00
+</p>
+
+<p>
+Salve no arquivo <code>remedios.txt</code> a linha: "03/06/2025 14:00".
+</p>
+
+<ol class="org-ol">
+<li value="5">Crie um programa em C que lê o arquivo <code>remedios.txt</code> e mostra somente a última linha com a data e hora:</li>
+</ol>
+
+<p>
+Última: 03/06/2025 14:00
+</p>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org83958a9" class="outline-2">
+<h2 id="org83958a9"><span class="section-number-2">3.</span> Struct</h2>
+<div class="outline-text-2" id="text-3">
+<p>
+Structs formam tipos de dados:
+</p>
+
+<div class="org-src-container">
+<pre class="src src-c">struct funcionario {
+  char nome[20];
+  int idade;
+  double salario;
+};
+</pre>
+</div>
+
+<p>
+Para declarar variáveis usamos a <b>tag</b> pessoa:
+</p>
+
+<div class="org-src-container">
+<pre class="src src-c">struct funcionario primeiro;
+</pre>
+</div>
+
+<p>
+Um ponteiro para um <code>struct funcionario</code> fica assim:
+</p>
+
+<div class="org-src-container">
+<pre class="src src-c">struct funcionario *pFunc;
+</pre>
+</div>
+
+<p>
+Vários funcionários podem ser armazenados em <code>arrays</code>:
+</p>
+
+<div class="org-src-container">
+<pre class="src src-c">struct funcionario empresa[20];
+</pre>
+</div>
+
+<p>
+A declaração pode vir após a definição:
+</p>
+
+<div class="org-src-container">
+<pre class="src src-c">struct funcionario {
+  char nome[20];
+  int idade;
+  double salario;
+} primeiro;
+</pre>
+</div>
+
+<p>
+É útil para quando não vamos usar mais a struct e podemos deixá-lá anônima:
+</p>
+
+<div class="org-src-container">
+<pre class="src src-c">struct {
+  char nome[20];
+  int idade;
+  double salario;
+} primeiro;
+</pre>
+</div>
+</div>
+
+<div id="outline-container-org2e765e5" class="outline-3">
+<h3 id="org2e765e5"><span class="section-number-3">3.1.</span> Usando structs</h3>
+<div class="outline-text-3" id="text-3-1">
+<p>
+Vamos gravar um struct em arquivo usando <code>fwrite()</code>:
+</p>
+
+<div class="org-src-container">
+<pre class="src src-c">#include &lt;stdio.h&gt;
+
+struct funcionario {
+  char nome[20];
+  int idade;
+  double salario;
+};
+
+int main(void) {
+  struct funcionario unico;
+
+  printf("Digite o nome: ");
+  scanf("%19s", unico.nome);
+
+  printf("Digite a idade: ");
+  scanf("%d", &amp;unico.idade);
+
+  printf("Digite o salario: ");
+  scanf("%lf", &amp;unico.salario);
+
+  FILE *pArquivo;
+  pArquivo = fopen("empresa.txt", "wb");
+
+  fwrite(&amp;unico, sizeof(struct funcionario), 1, pArquivo);
+
+  fclose(pArquivo);
+
+  return 0;
+}
+</pre>
+</div>
+
+<p>
+A sintaxe de <code>fwrite</code> é:
+</p>
+
+<div class="org-src-container">
+<pre class="src src-c">fwrite(origem, tamanho, quantidade, arquivo);
+</pre>
+</div>
+
+<dl class="org-dl">
+<dt>origem</dt><dd>ponteiro para o dado que será gravado</dd>
+<dt>tamanho</dt><dd>tamanho de um dado gravado no arquivo.</dd>
+<dt>quantidade</dt><dd>quantidade de dados que serão gravados.</dd>
+<dt>arquivo</dt><dd>ponteiro para o arquivo aberto.</dd>
+</dl>
+</div>
+</div>
+
+<div id="outline-container-org1bd9939" class="outline-3">
+<h3 id="org1bd9939"><span class="section-number-3">3.2.</span> Lendo dados</h3>
+<div class="outline-text-3" id="text-3-2">
+<p>
+Usando <code>fread()</code> lemos dados binários:
+</p>
+
+<div class="org-src-container">
+<pre class="src src-c">#include &lt;stdio.h&gt;
+
+struct funcionario {
+  char nome[20];
+  int idade;
+  double salario;
+};
+
+int main(void) {
+  struct funcionario retorno;
+
+  FILE *pArquivo;
+  pArquivo = fopen("empresa.txt", "rb");
+
+  fread(&amp;retorno, sizeof(struct funcionario), 1, pArquivo);
+
+  fclose(pArquivo);
+
+  printf("Nome: %s\n", retorno.nome);
+  printf("Idade: %d\n", retorno.idade);
+  printf("Salário: %f\n", retorno.salario);
+
+  return 0;
+}  
+</pre>
+</div>
+
+<p>
+A sintaxe é:
+</p>
+
+<div class="org-src-container">
+<pre class="src src-c">fread(destino, tamanho, quantidade, arquivo);
+</pre>
+</div>
+
+<dl class="org-dl">
+<dt>destino</dt><dd>ponteiro para onde vão os dados lidos.</dd>
+<dt>tamanho</dt><dd>tamanho de um dado gravado no arquivo.</dd>
+<dt>quantidade</dt><dd>quantidade de dados que serão lidos.</dd>
+<dt>arquivo</dt><dd>ponteiro para o arquivo aberto.</dd>
+</dl>
+
+<iframe width="950" height="594" src="https://www.youtube.com/embed/o3uXa9xOvG4" title="LP Aula16 ex4" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+</div>
+</div>
+
+<div id="outline-container-org260664d" class="outline-3">
+<h3 id="org260664d"><span class="section-number-3">3.3.</span> Exercício</h3>
+<div class="outline-text-3" id="text-3-3">
+<ol class="org-ol">
+<li value="6">Crie um programa em C que recebe 3 informações de um filme e grava no arquivo filmes.txt usando struct.</li>
+
+<li>Crie um programa em C que lê e mostra as informações gravadas no arquivo filmes.txt.</li>
+</ol>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org46ff1e6" class="outline-2">
+<h2 id="org46ff1e6"><span class="section-number-2">4.</span> Envio</h2>
+<div class="outline-text-2" id="text-4">
+<p>
+<a href="https://forms.gle/ncsYntXZmwdRRzT48">https://forms.gle/ncsYntXZmwdRRzT48</a>
+</p>
+</div>
+</div>
+</div>
+</body>
+</html>
